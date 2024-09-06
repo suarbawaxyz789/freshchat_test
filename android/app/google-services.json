@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1048255306227",
+    "project_id": "pusatpelayananpadlock",
+    "storage_bucket": "pusatpelayananpadlock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048255306227:android:7a4ca5dddff2835ccb1a86",
+        "android_client_info": {
+          "package_name": "com.pelayananpadlock.freshchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO_ayOswJ2WF02oySS7atQURL-MA2t2c8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
