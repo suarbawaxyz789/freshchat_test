@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fcWhite">#FFFFFF</color>
+    <color name="fcYellow">#FFFF00</color>
+    <color name="fcFuchsia">#FF00FF</color>
+    <color name="fcRed">#FF0000</color>
+    <color name="fcSilver">#C0C0C0</color>
+    <color name="fcGray">#808080</color>
+    <color name="fcOlive">#808000</color>
+    <color name="fcPurple">#800080</color>
+    <color name="fcMaroon">#800000</color>
+    <color name="fcAqua">#00FFFF</color>
+    <color name="fcLime">#00FF00</color>
+    <color name="fcTeal">#008080</color>
+    <color name="fcGreen">#008000</color>
+    <color name="fcBlue">#0000FF</color>
+    <color name="fcNavy">#000080</color>
+    <color name="fcBlack">#000000</color>
+    <color name="fcBackground">#ff191919</color>
+    <color name="fcWhite2">#ffb2b2b2</color>
+    <color name="fc282828">#ff282828</color>
+</resources>

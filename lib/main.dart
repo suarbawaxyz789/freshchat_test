@@ -8,13 +8,14 @@ import 'package:flutter/services.dart';
 import 'package:freshchat_sdk/freshchat_sdk.dart';
 import 'package:freshchat_sdk/freshchat_user.dart';
 
+import 'Util.dart';
 import 'constants.dart';
 
 Future<dynamic> myBackgroundMessageHandler(RemoteMessage message) async {
   print("Inside background handler");
 
   //NOTE: Freshchat notification - Initialize Firebase for Android only.
-  if (Platform.isAndroid) {
+  if (Util.isRegisterFcm) {
     await Firebase.initializeApp();
   }
   handleFreshchatNotification(message.data);
@@ -31,7 +32,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   //NOTE: Freshchat notification - Initialize Firebase for Android only.
-  if (Platform.isAndroid) {
+  if (Util.isRegisterFcm) {
     await Firebase.initializeApp();
   }
 
@@ -94,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Freshchat.init(APPID, APPKEY, DOMAIN);
+    Freshchat.init(APPID, APPKEY, DOMAIN,themeName: "MyCustomTheme");
     Freshchat.identifyUser(
       externalId: EXTERNAL_ID,
       restoreId: RESTORE_ID,
@@ -128,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> initNotification() async {
     //NOTE: Freshchat notification - Initialize Firebase for Android only.
-    if (Platform.isAndroid) {
+    if (Util.isRegisterFcm) {
       registerFcmToken();
 
       FirebaseMessaging.instance.onTokenRefresh
@@ -156,6 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> initSdk() async {
     await getUser();
+    await initNotification();
     print("test");
   }
 
@@ -170,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void registerFcmToken() async {
-    if (Platform.isAndroid) {
+    if (Util.isRegisterFcm) {
       String? token = await FirebaseMessaging.instance.getToken();
       print("FCM Token is generated $token");
       Freshchat.setPushRegistrationToken(token!);
