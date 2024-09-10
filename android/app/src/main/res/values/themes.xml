@@ -20,7 +20,7 @@
         <item name="android:paddingRight">8dp</item>
         <item name="android:paddingEnd">8dp</item>
         <item name="android:textAppearance">@style/TextAppearance.Freshchat.Medium</item>
-        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">italic</item>
         <item name="android:textDirection">firstStrong</item>
@@ -28,7 +28,7 @@
     </style>
 
     <style name="CustomMessageList" parent="Widget.Freshchat.MessageList">
-<!--        <item name="android:background">@drawable/freshchat_message_list_bg</item>-->
+        <!--        <item name="android:background">@drawable/freshchat_message_list_bg</item>-->
         <item name="android:background">@color/fcBackground</item>
         <item name="stackFromEnd">true</item>
         <item name="android:clipToPadding">false</item>
@@ -91,7 +91,8 @@
         <item name="android:inputType">textMultiLine|textCapSentences</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_marginLeft">@dimen/freshchat_text_view_default_margin_left</item>
-        <item name="android:layout_marginStart">@dimen/freshchat_text_view_default_margin_left</item>
+        <item name="android:layout_marginStart">@dimen/freshchat_text_view_default_margin_left
+        </item>
         <item name="android:layout_marginRight">8dp</item>
         <item name="android:layout_marginEnd">8dp</item>
         <item name="android:maxLines">4</item>
@@ -116,7 +117,72 @@
         <item name="android:minHeight">@dimen/freshchat_message_reply_frame_min_height</item>
     </style>
 
+    <style name="CustomUserMessageTime" parent="Widget.Freshchat.UserMessageTime">
+        <item name="android:textAppearance">@style/TextAppearance.Freshchat.Small</item>
+        <item name="android:textColor">@color/fcWhite</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="CustomTeamMemberMessageTime" parent="Widget.Freshchat.TeamMemberMessageTime">
+        <item name="android:textAppearance">@style/TextAppearance.Freshchat.Small</item>
+        <item name="android:textColor">@color/fcWhite2</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="CustomChannelDescription" parent="Widget.Freshchat.ChannelDescription">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">@integer/freshchat_channel_desc_max_lines</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Freshchat.Medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/fcWhite2</item>
+        <item name="android:textDirection">firstStrong</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="CustomChannelLastUpdatedAt" parent="Widget.Freshchat.ChannelLastUpdatedAt">
+        <item name="android:textAppearance">@style/TextAppearance.Freshchat.Small</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/fcWhite2</item>
+        <item name="android:textDirection">firstStrong</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="CustomChannelListItem" parent="Widget.Freshchat.ChannelListItem">
+        <item name="android:background">@drawable/rounded_listile</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="CustomChannelList" parent="Widget.Freshchat.ChannelList">
+        <item name="android:background">@null</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="CustomFAQListItem" parent="Widget.Freshchat.FAQListItem">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textAppearance">@style/TextAppearance.Freshchat.Medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/fcWhite2</item>
+        <item name="android:textDirection">firstStrong</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
     <style name="MyCustomTheme" parent="Theme.Freshchat.Light.DarkActionBar">
+        <item name="freshchatFAQListItemStyle">@style/CustomFAQListItem</item>
+        <item name="freshchatChannelListStyle">@style/CustomChannelList</item>
+        <item name="freshchatChannelDescriptionTextStyle">@style/CustomChannelDescription</item>
+        <item name="freshchatChannelListItemStyle">@style/CustomChannelListItem</item>
+        <item name="freshchatChannelLastUpdatedAtTextStyle">@style/CustomChannelLastUpdatedAt</item>
+        <item name="freshchatChannelListEmptyTextStyle">@style/CustomChannelDescription</item>
+
+        <item name="freshchatTeamMemberMessageTimeTextStyle">@style/CustomTeamMemberMessageTime
+        </item>
+        <item name="freshchatUserMessageTimeTextStyle">@style/CustomUserMessageTime</item>
         <item name="freshchatMessageReplyViewStyle">@style/CustomMessageReplyView</item>
         <item name="freshchatMessageReplyInputViewStyle">@style/CustomMessageReplyEditText</item>
         <item name="freshchatTeamMemberAvatarStyle">@style/CustomTeamMemberAvatarView</item>
@@ -125,11 +191,13 @@
         <item name="freshchatTeamMemberMessageTextStyle">@style/CustomTeamMemberMessage</item>
         <item name="freshchatMessageListStyle">@style/CustomMessageList</item>
         <item name="freshchatMessageListItemStyle">@style/MessageListItemCustom</item>
-        <item name="freshchatConversationBannerMessageStyle">@style/CustomConversationBannerMessage</item>
+        <item name="freshchatConversationBannerMessageStyle">
+            @style/CustomConversationBannerMessage
+        </item>
         <item name="freshchatChipViewTextViewStyle">@style/CustomChipTextViewStyle</item>
         <item name="android:windowBackground">@color/fcBackground</item>
-        <item name="freshchatChatBubbleLeft">@drawable/freshchat_chat_bubble_left</item>
-        <item name="freshchatChatBubbleRight">@drawable/freshchat_chat_bubble_right</item>
+        <item name="freshchatChatBubbleLeft">@drawable/freshchat_chat_bubble_left_2</item>
+        <item name="freshchatChatBubbleRight">@drawable/freshchat_chat_bubble_right_2</item>
         <item name="freshchatSendIcon">@drawable/send_icon</item>
         <item name="freshchatAttachIcon">@drawable/attachment_icon</item>
     </style>
