@@ -14,6 +14,11 @@ import 'constants.dart';
 Future<dynamic> myBackgroundMessageHandler(RemoteMessage message) async {
   print("Inside background handler");
 
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
+
   //NOTE: Freshchat notification - Initialize Firebase for Android only.
   if (Util.isRegisterFcm) {
     await Firebase.initializeApp();
@@ -95,7 +100,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Freshchat.init(APPID, APPKEY, DOMAIN, themeName: "MyCustomTheme");
+    if (Platform.isIOS) {
+      Freshchat.init(APPID, APPKEY, DOMAIN, themeName: "CustomTheme.plist");
+    } else {
+      Freshchat.init(APPID, APPKEY, DOMAIN);
+    }
     Freshchat.identifyUser(
       externalId: EXTERNAL_ID,
       restoreId: RESTORE_ID,
@@ -125,6 +134,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     initSdk();
+    startConversation();
+  }
+
+  Future<void> startConversation() async {
+    await Future.delayed(Duration(seconds: 1));
+    Freshchat.showConversations(filteredViewTitle: "Conversations", tags: [
+      "Chat with us",
+    ]);
   }
 
   Future<void> initNotification() async {
@@ -233,7 +250,10 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Freshchat.showConversations(
-            filteredViewTitle: "Filtered view title test",
+            filteredViewTitle: "Conversations",
+            tags: [
+              "Chat with us",
+            ]
           );
         },
         tooltip: 'Increment',
