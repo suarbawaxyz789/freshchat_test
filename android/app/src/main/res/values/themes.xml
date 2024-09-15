@@ -1,5 +1,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <color name="freshchat_message_list_reply_view_divider">@android:color/transparent</color>
+
     <style name="MyCustomTextAppearance" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textColor">@color/fcRed</item>
         <item name="android:colorBackground">@color/fcBlue</item>
