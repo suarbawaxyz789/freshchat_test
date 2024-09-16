@@ -17,6 +17,7 @@
     <color name="fcNavy">#000080</color>
     <color name="fcBlack">#000000</color>
     <color name="fcBackground">#ff191919</color>
+    <color name="fcLinkColor">#ff66F99A</color>
     <color name="fcWhite2">#ffb2b2b2</color>
     <color name="fc282828">#ff282828</color>
 </resources>
